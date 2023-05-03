@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block contingut %}
+    <h1>Pàgina d'informació</h1>
+    <p>Informació de la pàgina. Paràmetre rebut = {{paramRebut}}, nomPost={{nomPost}} i paràmetre rebut 2 = {{paramRebut2}}.</p>
+
+    <form action="/registrar" method="post">
+        <input name="nom" placeholder="Nom" type="text">
+        <input type="submit" value="Registra't">
+    </form>
+
+    <h2>Nou registre: {{nomPost}}</h2>
+    <h3>Usuaris registrats: </h3>
+    {% for usuari in llistaNoms %}
+        <p>{{usuari}}</p>
+    {% endfor %}
+
+{% endblock %}
